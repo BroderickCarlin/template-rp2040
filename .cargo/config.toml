@@ -1,9 +1,10 @@
 [target.'cfg(all(target_arch = "arm", target_os = "none"))']
-# replace with your chip as listed in `probe-rs chip list`
-runner = "probe-rs run --chip STM32F411RETx --connect-under-reset"
+# Use probe-rs if using an actual probe, if using the RP2040's USB bootloader, use elf2uf2
+# runner = "probe-rs run --chip RP2040"
+runner = "elf2uf2-rs --deploy --serial --verbose"
 
 [build]
-target = "thumbv7em-none-eabi"
+target = "thumbv6m-none-eabi"
 
 [env]
 DEFMT_LOG = "trace"
@@ -11,3 +12,4 @@ DEFMT_LOG = "trace"
 [profile.release]
 # Allows defmt to display log locations even in release
 debug = true
+

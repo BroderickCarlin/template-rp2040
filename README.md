@@ -1,9 +1,9 @@
 # README
-A basic template for Rust projects based on the NUCLEO-F411RE development board featuring the STM32F411RETx
+A basic template for Rust projects based on the RP2040
 
 **MAKE SURE TO UPDATE**
 
-Make sure to update `rust-toolchain.toml` to match the version found here: https://github.com/embassy-rs/embassy/blob/main/rust-toolchain.toml
+Make sure to update `.cargo/config.toml` to match how you are connecting to the RP2040 (probe or direct over USB)
 
 ## Getting started
 
